@@ -1,11 +1,11 @@
-file = open("To-Do.txt", "a+", encoding="UTF-8")
+file1 = open("To-Do.txt", "a+", encoding="UTF-8")
 
 while True:
     answ1= input("Do you want to add a new To-Do item? ('y' or 'n'): ")
     if answ1 == 'y':
         item = input("type in your new To-Do item: ")
-        file.write(item+"\n")
-        file.close()
+        file1.write(item+"\n")
+        file1.close()
     elif answ1 == 'n':
         answ2= input("Do you want to list your To-Do items? ('y' or 'n'): ")
         if answ2 == 'y':
