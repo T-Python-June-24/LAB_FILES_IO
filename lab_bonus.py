@@ -1,5 +1,7 @@
 import json
-from datetime import datetime
+import datetime
+
+
 def load_tasks():
     with open("lab_json.json", "r") as infile:
          tasks = json.load(infile)
