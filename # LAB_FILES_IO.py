@@ -1,7 +1,7 @@
 
 
 print("=== Welcom to To-Do List program ====")
-user_input=input("do you want to add a new To-Do item? \nanswer by (y) for yes and (n) for no\n:")
+user_input=input("do you want to add a new To-Do item? enter(y) for yes and (n) for no : ")
 
 while user_input != "exit" :
    if user_input.lower() == "y":
@@ -13,7 +13,7 @@ while user_input != "exit" :
    elif user_input.lower()=="n":
       print("----------------------------")
       
-      user_second_input=input("do you want to list your To-Do items ?\nanswer (y) for yes and (n) for no: ")
+      user_second_input=input("do you want to list your To-Do items ?answer (y) for yes and (n) for no: ")
       if user_second_input =="y":
          file=open("to_do.txt","r",encoding="UTF-8")
          file.seek(0)
@@ -23,8 +23,10 @@ while user_input != "exit" :
          file.close()
       if user_second_input =="n":
          break
-   user_input=input("do you want to add a new To-Do item? \nanswer by (y) for yes and (n) for no\n:")
-
+   else:
+      print("incorrect input ")
+   user_input=input("do you want to add a new To-Do item? enter(y) for yes and (n) for no : ")
+ 
 
 print("=== Thank you for using the To-Do program, come back again soon ===")
 
