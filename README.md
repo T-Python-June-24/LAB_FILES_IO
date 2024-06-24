@@ -11,7 +11,7 @@
 
 
 # Bonus
-## Modify the project to be able to do the following instead of  writing the to do items line by line (**hint**: use the `json` module):
+## Modify the project to be able to do the following instead of writing the to do items line by line (**hint**: use the `json` module):
 - each to-do item should be saved with the following attributes:
 - - title
   - date & time
