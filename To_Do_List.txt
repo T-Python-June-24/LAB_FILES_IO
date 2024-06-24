@@ -1,7 +1,3 @@
-test1 
-test2 
-test3 
-111
-rr2
-test1
-444
+take a exam 
+write code 
+doing interview
