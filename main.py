@@ -7,7 +7,7 @@ while True:
         break
     elif answer.upper() == "Y":
         content = input("Please type in your new To-Do item: ")
-        writeToFile(content + " ")
+        writeToFile(content)
     elif answer.upper() == "N":
         answer = input("Do you want to list your To-Do items [Y or N]?")
         if answer.upper() == "Y":
