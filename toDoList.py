@@ -2,6 +2,7 @@ def readFile():
     file = open("to_do.txt", "r", encoding = "UTF-8")
     file.seek(0)
     content = file.read()
+    print("Your items in TO DO LIST are:")
     print(content)
     file.close()
 
