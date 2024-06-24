@@ -9,8 +9,10 @@ while True:
         if To_do_n == "y":
             file.seek(0)
             print(file.read())
-    elif User_question == "exit":
-        print("thank you for using the To-Do program, come back again soon")
-        break
+    else:
+        exit=input("Do you want to Exit ? enter 'exit': ")
+        if exit == "exit":
+            print("thank you for using the To-Do program, come back again soon")
+            break
         
             
