@@ -8,10 +8,12 @@ def addToDo():
         toDo = readFile()
         toDo[title] = {"date&Time": f"{datetime.now().replace(microsecond=0)}", "done": False}
         writeToFile(toDo)
+        print(f"{title} has been added to your To-Do list.")
+        input("press any key to comtinue..")
     else:
         toDo = {}
         toDo[title] = {"date&Time": f"{datetime.now().replace(microsecond=0)}", "done": False}
-        print(f"{title} has been added to To-Do list.")
+        print(f"{title} has been added to your To-Do list.")
         writeToFile(toDo)
 
 
@@ -24,6 +26,7 @@ def displayToDos():
             status = "DONE" if toDo["done"] == True else "NOT DONE"
             dateTime = toDo["date&Time"]
             print(f"{index} - {title} - {dateTime} - {status}")
+        input("press any key to comtinue..")
     except Exception as e:
         print(e)
 
@@ -34,8 +37,10 @@ def markDone():
         toDo[title]["done"] = True
         writeToFile(toDo)
         print(f"{title} task is DONE!")
+        input("press any key to comtinue..")
     else:
          print("No To-Dos available!")
+         input("press any key to comtinue..")
 
 
 def findToDo():
@@ -46,17 +51,19 @@ def findToDo():
             status = "DONE" if toDo[item]["done"] == True else "NOT DONE"
             dateTime = toDo[item]["date&Time"]
             print(f"{item} - {dateTime} - {status} is FOUND!")
+            input("press any key to comtinue..")
         else:
             print(f"The To-Do, {item} is not FOUND!")
+            input("press any key to comtinue..")
 
 
 while True:
-    answer = input("Press A to add a new To-Do itemn= n, D to display all To-Dos, M to mark a To-DO as DONE or S to search for a To-Do: ")
+    answer = input("Enter your choice:\nA to add a new To-Do item.\nD to display To-Dos.\nM to mark a To-DO as DONE.\nS to search for a To-Do.\n")
     if answer == "exit":
         print("Thank you for using the To-Do program, please, come back again soon.")
         break
     elif answer.upper() == "A":
-        addToDo()
+        addToDo()   
     elif answer.upper() == "D":
         displayToDos()
     elif answer.upper() == "M":
