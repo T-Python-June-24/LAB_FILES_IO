@@ -1,9 +1,13 @@
+import os
 def readFile():
-    file = open("to_do.txt", "r", encoding = "UTF-8")
-    content = file.read()
-    print("Your items in TO DO LIST are:")
-    print(content)
-    file.close()
+    if os.stat("to_do.txt").st_size != 0:
+        file = open("to_do.txt","r", encoding="UTF-8")
+        content = file.read()
+        print("You have this list to do:")
+        print(content)
+        file.close()
+    else:
+        print("No To-Do to display")
 
 
 def writeToFile(content):

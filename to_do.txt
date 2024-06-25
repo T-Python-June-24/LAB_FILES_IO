@@ -1,3 +1,4 @@
 Go to Gym
-Visiting Grandma
-Revision
+Visit Grandma
+Python Revision
+
