@@ -24,42 +24,48 @@ def loadFromJosn():
 
 def displyToDoItems(toDoList):
     if toDoList:
-        print("Your To-Do items: \n ")
+        print("\nYour To-Do items: \n ")
         for i, item in enumerate(toDoList, start=0):
             status = "Done" if item["Done"] else "Not Done"
             print(f"{i}. {item['Title']} - {item['DateTime']} - {status}")
     else:
-        print("\033[31m Your To-Do list is empty.\033[34m")
+        print("\n\033[31m Your To-Do list is empty.\033[34m\n")
 
 def SetItemDone(toDoList):
     if toDoList:
         displyToDoItems(toDoList)
-        try:
-            index = int(input("Please enter the number of the task you want to set as done: "))
-            if 0 <= index < len(toDoList)-1:
+        index = input("Please enter the number of the task you want to set as done: ")
+        if not index.isnumeric():
+            print("\n\033[31m You enterd ab invalid number \033[34m\n")
+
+        else:
+            index = int(index)
+            if index < len(toDoList):
                 toDoList[index]["Done"] = True
                 saveInJson(toDoList)
             else:
-                print("Invalid number.")
-        except ValueError:
-            print("Please enter a valid number.")
+                    print("\n\033[31m You enterd ab invalid number \033[34m\n")
+                    SetItemDone(toDoList)
     else:
         print("\033[31m Your To-Do list is empty.\033[34m")
 
 
 def SearchToDoItems(toDoList):
     if toDoList:
-        search_term = input("Enter the title to search for: ").lower()
-        results = [item for item in toDoList if search_term in item["title"].lower()]
-        if results:
-            print("Search results:")
-            for item in results:
-                status = "DONE" if item["done"] else "NOT DONE"
-                print(f"{item['Title']} - {item['DateTime']} - {status}")
-        else:
-            print("No matching tasks found.")
+        try:    
+            search_term = input("Enter the title to search for: ").lower()
+            results = [item for item in toDoList if search_term in item["Title"].lower()]
+            if  results:
+                print("\n\033[32m Search results: \033[34m\n")
+                for item in results:
+                    status = "DONE" if item["Done"] else "NOT DONE"
+                    print(f"\n\033[32m {item['Title']} - {item['DateTime']} - {status} \033[34m\n")
+            else:
+                print("\n\033[31m No matching tasks found.\033[34m")
+        except Exception as e :
+            print(f"\n\033[31mError: {e} \033[34m")
     else:
-        print("\033[31m Your To-Do list is empty.\033[34m")
+        print("\n\033[31m Your To-Do list is empty.\033[34m")
 
 
 def main():
