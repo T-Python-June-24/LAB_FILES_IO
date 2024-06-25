@@ -3,3 +3,5 @@
 C:/Users/ghofran9/AppData/Local/Microsoft/WindowsApps/python3.11.exe c:/Users/ghofran9/Documents/LAB_files/LAB_FILES_IO/To-Do.py
 welcome
 
+hello
+hi
