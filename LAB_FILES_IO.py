@@ -12,8 +12,10 @@ def to_do_program():
     
     
 def display_items():
-    file = open("to_do.txt.txt", "r", encoding="UTF-8")
-    print(file.read())
+    file = open("to_do.txt", "r", encoding="UTF-8")
+    abdullah =file.read()
+    print(abdullah)
+    file.close()
  
 
 while True:
@@ -24,7 +26,6 @@ while True:
     if user_input == "n":
         print("Thank you for useing me To Do App 📝🌎")
         display_items()
-        break
     if user_input == "exit":
         print("Thank you for useing me To Do App 📝🌎")
         print("thank you for using the To-Do program, come back again soon 👋")
