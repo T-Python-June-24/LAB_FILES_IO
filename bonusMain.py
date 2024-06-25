@@ -17,7 +17,6 @@ def addToDo():
         writeToFile(toDo)
 
 
-
 def displayToDos():
     try:
         print("Your To-Do items are:")
@@ -29,6 +28,7 @@ def displayToDos():
         input("press any key to comtinue..")
     except Exception as e:
         print(e)
+
 
 def markDone():
     title = input("Please type in your To-Do item to mark it DONE: ")

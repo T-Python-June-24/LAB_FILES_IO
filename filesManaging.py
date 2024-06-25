@@ -4,7 +4,7 @@ import os
 
 def readFile():
     if os.stat("toDoItems.txt").st_size != 0:
-        # Opening JSON file
+        #Opening txt file
         file = open("toDoItems.txt", "r", encoding = "UTF-8")
         # returns JSON object as a dictionary
         try:
